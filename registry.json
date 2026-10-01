@@ -1,0 +1,15 @@
+{
+  "$schema": "./registry.schema.json",
+  "registryVersion": 1,
+  "plugins": [
+    {
+      "id": "flusher",
+      "name": "Flusher",
+      "description": "Lists the git repositories in your folders that have uncommitted changes; Flush starts an agent that commits them meaningfully and pushes each current branch.",
+      "repo": "gladimdim/super-desktop-flusher",
+      "tags": ["git", "agents"],
+      "author": "gladimdim",
+      "minHost": "1.2.0"
+    }
+  ]
+}
