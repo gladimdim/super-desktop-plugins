@@ -6,6 +6,7 @@ can find them.
 
 | Plugin | What it does |
 | --- | --- |
+| [Center Magnify](https://github.com/gladimdim/super-desktop-center-magnify) | Cards grow up to 70% of the screen width near the centre, shrink toward the sides and become icons at the left and right edges. |
 | [Flusher](https://github.com/gladimdim/super-desktop-flusher) | Lists the git repositories in your folders that have uncommitted changes; Flush starts an agent that commits them meaningfully and pushes each current branch. |
 
 Listing is not a review. Read a plugin's README and permissions before you
