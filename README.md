@@ -6,8 +6,8 @@ can find them.
 
 | Plugin | What it does |
 | --- | --- |
-| [Gravity WM](https://github.com/gladimdim/super-desktop-gravity-wm) | Cards grow toward the horizontal centre, up to 70% of the screen width with more rows and columns, shrink toward the sides and become icons at the edges. |
 | [Flusher](https://github.com/gladimdim/super-desktop-flusher) | Lists the git repositories in your folders that have uncommitted changes; Flush starts an agent that commits them meaningfully and pushes each current branch. |
+| [Gravity WM](https://github.com/gladimdim/super-desktop-gravity-wm) | Cards grow toward the horizontal centre, up to 70% of the screen width with more rows and columns, shrink toward the sides and become icons at the edges. |
 
 Listing is not a review. Read a plugin's README and permissions before you
 install it: plugins run as you.
