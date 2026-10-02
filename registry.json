@@ -3,18 +3,6 @@
   "registryVersion": 1,
   "plugins": [
     {
-      "id": "center-magnify",
-      "name": "Center Magnify",
-      "description": "Cards grow up to 70% of the screen width near the centre, shrink toward the sides and become icons at the left and right edges.",
-      "repo": "gladimdim/super-desktop-center-magnify",
-      "tags": [
-        "layout",
-        "renderer"
-      ],
-      "author": "gladimdim",
-      "minHost": "1.2.0"
-    },
-    {
       "id": "flusher",
       "name": "Flusher",
       "description": "Lists the git repositories in your folders that have uncommitted changes; Flush starts an agent that commits them meaningfully and pushes each current branch.",
@@ -22,6 +10,18 @@
       "tags": [
         "git",
         "agents"
+      ],
+      "author": "gladimdim",
+      "minHost": "1.2.0"
+    },
+    {
+      "id": "gravity-wm",
+      "name": "Gravity WM",
+      "description": "Cards grow toward the horizontal centre, up to 70% of the screen width with more rows and columns, shrink toward the sides and become icons at the edges.",
+      "repo": "gladimdim/super-desktop-gravity-wm",
+      "tags": [
+        "layout",
+        "renderer"
       ],
       "author": "gladimdim",
       "minHost": "1.2.0"
