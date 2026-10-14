@@ -14,10 +14,18 @@ plugins run as you.
 
 ## Install a plugin
 
+In SUPER DESKTOP: **Settings → Plugins → 🧩 Get plugins** shows this list
+(search, a category, grouped by category or by name) with **Install**. In a
+terminal:
+
 ```sh
-super-desktop plugin install https://github.com/<owner>/<plugin-repo>
+super-desktop plugin search [text]          # this list, by category
+super-desktop plugin install <plugin id>    # from its repository, checked against this list
 super-desktop plugin approve <plugin id>
 ```
+
+`super-desktop plugin install https://github.com/<owner>/<repo>` installs a
+plugin that is not listed.
 
 An installed plugin runs only once you approve it, here or in Settings →
 Plugins, where **Ask AI to review** reads it first.
@@ -25,7 +33,9 @@ Plugins, where **Ask AI to review** reads it first.
 
 ## For SUPER DESKTOP and other tools
 
-The list is at
+SUPER DESKTOP reads this list (Get plugins, `plugin search`, `plugin install
+<id>`); it refuses an entry whose repository's `plugin.json` has another id,
+and leaves out entries that are not well formed. The list is at
 `https://raw.githubusercontent.com/gladimdim/super-desktop-plugins/main/registry.json`,
 described by `registry.schema.json` (`registryVersion` 2). A plugin installs
 from `https://github.com/<repo>`; `api` and `minHost` say whether this SUPER
