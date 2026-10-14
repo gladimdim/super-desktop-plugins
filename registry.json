@@ -14,6 +14,17 @@
       "slots": ["popup", "toolbar.item"]
     },
     {
+      "id": "harness-single-button",
+      "name": "Agents button",
+      "description": "One top-bar button that opens a list of the agents turned on in Settings, each with its icon and name; click one to open a new card for it.",
+      "repo": "gladimdim/super-desktop-harness-single-button",
+      "tags": ["agents", "launcher"],
+      "author": "gladimdim",
+      "api": 1,
+      "minHost": "1.5.0",
+      "slots": ["popup", "toolbar.item"]
+    },
+    {
       "id": "reminder",
       "name": "Reminder",
       "description": "A bell in the top bar: click it to add a reminder, right-click it to see and remove them. When one is due it notifies, plays a ding-dong and the bell shakes.",
