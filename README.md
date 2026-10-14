@@ -6,6 +6,7 @@ people, and SUPER DESKTOP itself, can find them.
 
 | Plugin | What it does | Needs |
 | --- | --- | --- |
+| [Focus timer](https://github.com/gladimdim/super-desktop-focus-timer) | A countdown timer in the top bar: click to start one (5, 15, 25 min or your own, with a label), right-click for finished timers. When one ends it notifies, plays an alarm and flashes. | 1.6.0 |
 | [Reminder](https://github.com/gladimdim/super-desktop-reminder) | A bell in the top bar: click it to add a reminder, right-click it to see and remove them. When one is due it notifies, plays a ding-dong and the bell shakes. | 1.6.0 |
 
 Listing is not a review. Read a plugin's README before you install it:
