@@ -1,32 +1,36 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/gladimdim/super-desktop/skills/super-desktop-plugin/schemas/registry.schema.json",
-  "title": "SUPER DESKTOP plugin registry (registry.json), registryVersion 1",
-  "description": "A list of plugins people can find and install. Listing is not trust: installs pin the commit of a tag. One entry per plugin; ids are unique.",
+  "$id": "https://raw.githubusercontent.com/gladimdim/super-desktop-plugins/main/registry.schema.json",
+  "title": "SUPER DESKTOP plugin registry (registry.json), registryVersion 2",
+  "description": "The public list of SUPER DESKTOP plugins (QML plugins with a plugin.json). Each entry points at the plugin's own git repository, which `super-desktop plugin install https://github.com/<repo>` installs. Listing is not a review: an installed plugin runs only after the user approves it.",
   "type": "object",
   "additionalProperties": false,
   "required": ["registryVersion", "plugins"],
   "properties": {
     "$schema": { "type": "string" },
-    "registryVersion": { "const": 1 },
+    "registryVersion": { "const": 2 },
     "plugins": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "name", "description", "repo", "author", "minHost"],
+        "required": ["id", "name", "description", "repo", "author", "api", "minHost"],
         "properties": {
-          "id": { "description": "The plugin's manifest id.", "type": "string", "pattern": "^[a-z][a-z0-9-]{1,38}[a-z0-9]$" },
-          "name": { "type": "string", "minLength": 1, "maxLength": 48 },
-          "description": { "type": "string", "minLength": 1, "maxLength": 200 },
-          "repo": { "description": "GitHub owner/name of the plugin's own repository.", "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+          "id": { "description": "The id in the plugin's plugin.json (also its folder name once installed).", "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,47}$" },
+          "name": { "description": "The name in the plugin's plugin.json.", "type": "string", "minLength": 1, "maxLength": 48 },
+          "description": { "description": "One or two sentences of what the user gets.", "type": "string", "minLength": 1, "maxLength": 200 },
+          "repo": { "description": "GitHub owner/name of the plugin's repository; plugin.json is at its top level.", "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
           "tags": { "type": "array", "maxItems": 8, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9-]{1,24}$" } },
           "author": { "type": "string", "minLength": 1, "maxLength": 100 },
-          "minHost": { "description": "The lowest SUPER DESKTOP version the plugin works with (its engines.superDesktop lower bound).", "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
-          "reviewedTag": { "description": "A release tag someone reviewed with the super-desktop-plugin-review skill.", "type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$" },
-          "reviewedCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" }
-        },
-        "dependentRequired": { "reviewedTag": ["reviewedCommit"], "reviewedCommit": ["reviewedTag"] }
+          "api": { "description": "The plugin API version its plugin.json declares (\"api\").", "type": "integer", "minimum": 1 },
+          "minHost": { "description": "The lowest SUPER DESKTOP version that has everything the plugin uses.", "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "slots": {
+            "description": "Where its surfaces go, from its plugin.json (sorted, no repeats).",
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "enum": ["dock.left", "dock.right", "toolbar.item", "panel", "settings.page", "card", "fullscreen", "popup"] }
+          }
+        }
       }
     }
   }
