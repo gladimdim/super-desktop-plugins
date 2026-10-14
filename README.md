@@ -47,7 +47,9 @@ DESKTOP can run it, `slots` where it appears.
    `super-desktop plugin new <id>`), keep `plugin.json` at the top of its
    repository, and make `super-desktop plugin check <id>` pass with no errors
    or warnings. A README that says what it does on the user's PC (programs it
-   runs, files it writes, anything it sends) helps it get listed.
+   runs, files it writes, anything it sends) helps it get listed. Add a
+   `preview.png` at the top (1280×640, at most 1.5 MiB, the plugin in use):
+   SUPER DESKTOP shows it on the plugin's card.
 2. Open a pull request that adds an entry to `registry.json`, in id order:
 
    ```json
