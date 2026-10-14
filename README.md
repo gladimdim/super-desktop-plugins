@@ -14,8 +14,10 @@ plugins run as you.
 
 ## Install a plugin
 
-In SUPER DESKTOP: **Settings → Plugins → 🧩 Get plugins** shows this list
-(search, a category, grouped by category or by name) with **Install**. In a
+In SUPER DESKTOP: **Settings → Plugins → Discover** shows this list
+(search, a category, grouped by category) with **Install**, and **Edit &
+Enhance**, which makes a plugin your own copy and opens an AI agent to
+improve it. In a
 terminal:
 
 ```sh
@@ -33,7 +35,7 @@ Plugins, where **Ask AI to review** reads it first.
 
 ## For SUPER DESKTOP and other tools
 
-SUPER DESKTOP reads this list (Get plugins, `plugin search`, `plugin install
+SUPER DESKTOP reads this list (Discover, `plugin search`, `plugin install
 <id>`); it refuses an entry whose repository's `plugin.json` has another id,
 and leaves out entries that are not well formed. The list is at
 `https://raw.githubusercontent.com/gladimdim/super-desktop-plugins/main/registry.json`,
@@ -43,31 +45,18 @@ DESKTOP can run it, `slots` where it appears.
 
 ## Add your plugin
 
-1. Build it with SUPER DESKTOP's plugin skill (✨ Create Plugin, or
-   `super-desktop plugin new <id>`), keep `plugin.json` at the top of its
-   repository, and make `super-desktop plugin check <id>` pass with no errors
-   or warnings. A README that says what it does on the user's PC (programs it
-   runs, files it writes, anything it sends) helps it get listed. Add a
-   `preview.png` at the top (1280×640, at most 1.5 MiB, the plugin in use):
-   SUPER DESKTOP shows it on the plugin's card.
-2. Open a pull request that adds an entry to `registry.json`, in id order:
+Your plugin stays in your own public GitHub repository; a pull request adds
+one entry for it to `registry.json`. In short:
 
-   ```json
-   {
-     "id": "your-id",
-     "name": "Your Plugin",
-     "description": "One or two sentences of what the user gets.",
-     "repo": "you/your-plugin-repo",
-     "tags": ["productivity"],
-     "author": "you",
-     "api": 1,
-     "minHost": "1.6.0",
-     "slots": ["popup", "toolbar.item"]
-   }
-   ```
+1. Make it with SUPER DESKTOP's plugin skill (✨ Create Plugin, or
+   `super-desktop plugin new <id>`), with `plugin.json`, a README that says
+   what it does on the user's PC, a LICENSE and a `preview.png` at the top.
+2. `super-desktop plugin check <id>` must pass; `super-desktop plugin publish
+   <id>` checks the rest and prints your entry.
+3. [Edit registry.json](https://github.com/gladimdim/super-desktop-plugins/edit/main/registry.json)
+   on GitHub (it forks for you), add the entry in id order, and open the pull
+   request. `python3 validate.py` runs the same checks as CI.
 
-   `id`, `name` and `api` must match your `plugin.json`, and `slots` (sorted)
-   its surfaces' slots. `minHost` is the lowest SUPER DESKTOP version with
-   everything it uses.
-3. `python3 validate.py` (needs `pip install jsonschema`) runs the same checks
-   as CI, including reading your `plugin.json` from GitHub.
+**[CONTRIBUTING.md](CONTRIBUTING.md)** has every step: the fields, the
+preview, checking it installs, the git and `gh` commands, what reviewers
+look at, and how to update or remove an entry.
