@@ -36,6 +36,17 @@
       "slots": ["popup", "toolbar.item"]
     },
     {
+      "id": "sd-editor",
+      "name": "SD Editor",
+      "description": "A ✎ SD button in the top bar that opens SD Editor, SUPER DESKTOP's built-in text editor card, in the top bar's folder: file tree, tabs, syntax colors, find and replace.",
+      "repo": "gladimdim/super-desktop-sd-editor",
+      "tags": ["development", "tools"],
+      "author": "gladimdim",
+      "api": 1,
+      "minHost": "1.6.0",
+      "slots": ["toolbar.item"]
+    },
+    {
       "id": "tictactoe",
       "name": "TicTacToe",
       "description": "A tic-tac-toe game that stays on the desktop: a big board with the score beside it, against the computer or a friend. A # in the top bar brings the panel back.",
