@@ -34,6 +34,17 @@
       "api": 1,
       "minHost": "1.6.0",
       "slots": ["popup", "toolbar.item"]
+    },
+    {
+      "id": "tictactoe",
+      "name": "TicTacToe",
+      "description": "A tic-tac-toe game that stays on the desktop: a big board with the score beside it, against the computer or a friend. A # in the top bar brings the panel back.",
+      "repo": "gladimdim/super-desktop-tictactoe",
+      "tags": ["games"],
+      "author": "gladimdim",
+      "api": 1,
+      "minHost": "1.6.0",
+      "slots": ["panel", "toolbar.item"]
     }
   ]
 }
